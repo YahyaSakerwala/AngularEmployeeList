@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "name": "rach",
+        "emailId": "rach@mmm.com",
+        "age": 26,
+        "dateOfJoining": "2023-10-27"
+    },
+    {
+        "id": 2,
+        "name": "sujata",
+        "emailId": "sujata@mmm.com",
+        "age": 25,
+        "dateOfJoining": "2023-10-26"
+    },
+    {
+        "id": 3,
+        "name": "yahya",
+        "emailId": "yahya@mmm.com",
+        "age": 36,
+        "dateOfJoining": "2023-10-29"
+    },
+    {
+        "id": 4,
+        "name": "saad",
+        "emailId": "saad@mmm.com",
+        "age": 55,
+        "dateOfJoining": "2023-11-26"
+    }
+    
+]

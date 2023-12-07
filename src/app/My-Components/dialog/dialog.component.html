@@ -1,0 +1,52 @@
+<div>
+    <h1 mat-dialog-title>Add Employee Data</h1>
+</div>
+<div mat-dialog-content>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input formControlName="name" matInput placeholder="Enter name of Employee">
+                <mat-error *ngIf="name.hasError('maxlength')">Name length exceeds 128</mat-error>
+            <mat-error *ngIf="name.hasError('isNumeric')">Name should contain only characters</mat-error>
+            <mat-error *ngIf="name.hasError('required')">Name is required</mat-error>
+            </mat-form-field>
+
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Date of Joining</mat-label>
+                <input formControlName="dateOfJoining" matInput [matDatepicker]="picker1" >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+                <mat-error *ngIf="dateOfJoining.hasError('required')">Date is required</mat-error>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Age</mat-label>
+                <input formControlName="age" type="number" min="0" matInput placeholder="Enter Age of Employee">
+                <mat-error *ngIf="age.hasError('max')">Age should be less than 100</mat-error>
+                <mat-error *ngIf="age.hasError('required')">Age is required</mat-error>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input formControlName="emailId" matInput placeholder="Enter Email of Employee">
+                <mat-error *ngIf="emailId.hasError('emailId')">Email invalid</mat-error>
+                <mat-error *ngIf="emailId.hasError('required')">Email is required</mat-error>
+            </mat-form-field>
+        </p>
+        <div mat-dialog-actions [align]="'end'">
+            <button mat-raised-button color="primary" type="submit" mat-dialog-close>Save</button>
+            <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+
+        </div>
+    </form>
+</div>

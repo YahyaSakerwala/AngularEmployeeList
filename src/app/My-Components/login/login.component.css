@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+mat-card{
+    width: 40%;
+    height: 60%;
+    padding-top: 20px;
+}
+
+button{
+    margin: 5px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
