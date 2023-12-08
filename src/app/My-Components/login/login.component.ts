@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/My-Services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit{
   hide = true;
   loginForm!: FormGroup
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private apiService: ApiService){}
 
   ngOnInit(){
     this.loginForm = this.fb.group({
@@ -22,6 +23,16 @@ export class LoginComponent implements OnInit{
 
   onSubmit(){
     console.log(this.loginForm.value);
+    this.apiService.loginEmployee(this.loginForm.value).subscribe( 
+    { 
+      next:(response) => {
+        console.log("User Logged in",response)
+      },
+      error:(error) => {
+        console.log("Invalid User");
+      }
+    }
+    )
   }
 
   get username(){

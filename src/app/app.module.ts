@@ -19,6 +19,7 @@ import { LoginComponent } from './My-Components/login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {MatTableModule} from '@angular/material/table';
     ReactiveFormsModule,
     MatCardModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

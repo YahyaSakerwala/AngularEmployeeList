@@ -23,7 +23,7 @@ export class EmployeeListComponent implements OnInit{
     this.getEmployeeList();
   }
 
-  openDialog() {
+  openDialogForAdd() {
     const dialogRef = this.dialog.open(DialogComponent,{
       width:'40%'
     });
@@ -65,8 +65,11 @@ export class EmployeeListComponent implements OnInit{
   }
 
   editEmployee(element:any){
+    // open dialog box but now for edit
+    const dialogRef = this.dialog.open(DialogComponent,{
+      width:'40%',
+      data:element
+    });
     
   }
-
-
 }
