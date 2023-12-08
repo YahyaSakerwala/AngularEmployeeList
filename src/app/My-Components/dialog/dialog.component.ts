@@ -35,6 +35,7 @@ export class DialogComponent implements OnInit{
       { 
         next:(response) => {
           console.log("received data from backend",response)
+          window.location.reload();
         },
         error:() => {
 

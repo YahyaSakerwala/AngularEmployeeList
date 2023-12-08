@@ -59,7 +59,13 @@ export class EmployeeListComponent implements OnInit{
   deleteEmployee(id:number){
     this.apiService.deleteEmployeeList(id).subscribe( () => {
       console.log("Item deleted with id"+id);
+      // window.location.reload();
+      this.getEmployeeList();
     });
+  }
+
+  editEmployee(element:any){
+    
   }
 
 
