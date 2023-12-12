@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http : HttpClient) { }
 
-  private apiUrl = 'http://localhost:5000/EmployeeApplication-0.0.1-SNAPSHOT';
+  private apiUrl = 'http://192.168.1.66:5000/EmployeeApplication-0.0.1-SNAPSHOT';
 
   getEmployeeList(): Observable<any> {
     return this.http.get<any>(this.apiUrl+'/employees')

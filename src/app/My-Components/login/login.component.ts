@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/My-Services/api.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit{
   hide = true;
   loginForm!: FormGroup
 
-  constructor(private fb: FormBuilder, private apiService: ApiService){}
+  constructor(private fb: FormBuilder, private apiService: ApiService, private route: Router){}
 
   ngOnInit(){
     this.loginForm = this.fb.group({
@@ -27,6 +28,8 @@ export class LoginComponent implements OnInit{
     { 
       next:(response) => {
         console.log("User Logged in",response)
+        this.route.navigate(['employeeList']);
+
       },
       error:(error) => {
         console.log("Invalid User");
